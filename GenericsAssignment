@@ -1,0 +1,153 @@
+1.
+package generics;
+
+public class Employee {
+	String name;
+	int id;
+	double sal;
+	String departments;
+	public Employee(String name, int id, double sal, String departments) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.sal = sal;
+		this.departments = departments;
+	}
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", id=" + id + ", sal=" + sal + ", departments=" + departments + "]";
+	}
+		
+
+}
+package generics;
+
+import java.util.HashSet;
+
+public class Company {
+
+	public static void main(String[] args) {
+		HashSet <Employee> h = new HashSet <>();
+		h.add(new Employee ("Santhi",123,20000,"Development"));
+		h.add(new Employee ("Nireekshan",456,20000,"Development"));
+		h.add(new Employee ("Raju",789,20000,"Development"));
+		Company.printHashSet(h);
+	}
+
+	private static void printHashSet(HashSet<Employee> h) {
+		for(Employee temp:h) {
+			System.out.println(temp);
+			
+		}
+		
+	}
+
+}
+----------------------------------------------------------------------------------------------
+2.
+package generics;
+
+import java.util.HashMap;
+
+public class RandomValues {
+
+	public static void main(String[] args) {
+		HashMap<Integer,Double> hM= new HashMap<> (); 
+		hM.put(1, 1.0);
+		hM.put(5, 1.0);
+		hM.put(6, 1.0);
+		hM.put(4, 1.0);
+		hM.put(2, 1.0);
+		hM.put(3, 1.0);
+		hM.put(7, 1.0);
+		hM.put(8, 1.0);
+		hM.put(9, 1.0);
+		hM.put(10, 1.0);
+		System.out.println(hM);
+		
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------
+3.package generics;
+import java.util.Arrays;
+
+public class Exchange {
+
+	public static void main(String[] args) {
+		
+		int temp;
+		int [] i = {1,2,3,4};
+		System.out.println("Array before swapping "+Arrays.toString(i));
+		temp = i[0];
+		i[0] =i[1];
+		i[1]=temp;
+		
+		System.out.println("Array after the swapping"+Arrays.toString(i));
+		
+		
+		
+	}
+
+}
+---------------------------------------------------------------------------------------
+
+package generics;
+
+public class Pair<K,V> {
+	private K key;
+	private V value;
+	public K getKey() {
+		return key;
+	}
+	public void setKey(K key) {
+		this.key = key;
+	}
+	public V getValue() {
+		return value;
+	}
+	public void setValue(V value) {
+		this.value = value;
+	}
+	public Pair(K key, V value) {
+		super();
+		this.key = key;
+		this.value = value;
+	}
+	@Override
+	public String toString() {
+		return "Pair [key=" + key + ", value=" + value + "]";
+	}
+	
+	
+	/*public K showKey() {
+		return key;
+	}
+	
+	public V showValue() {
+		return value;
+	}*/
+		
+
+}
+
+package generics;
+
+public class UserLogicA {
+
+	public static void main(String[] args) {
+		Pair<String, String> p = new Pair<>("raju", "123");
+		System.out.println(p.toString());
+		p.setKey("Nireekshan");
+		p.setValue("456");
+		System.out.println(p.toString());
+		
+		Pair<String ,java.util.Date> p1 = new Pair<>("Today is",(new java.util.Date()));
+		System.out.println(p1.toString());
+
+	}
+
+}
+
